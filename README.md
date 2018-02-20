@@ -2,7 +2,7 @@
 
 replace the following command with your desired s3 location in bootstrap_action.sh
 
-    aws s3 cp s3://<s3-bucket>/zeppelin-bucket/resources/ zeppelinsetup --recursive
+    aws s3 cp s3://<s3-bucket>/zeppelin-setup/resources/ zeppelinsetup --recursive
 
 Push the folder setupZeppelin to your desired S3 location.
 

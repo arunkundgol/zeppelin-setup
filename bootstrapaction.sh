@@ -17,7 +17,7 @@ conda install -y psycopg2
 
 if grep isMaster /mnt/var/lib/info/instance.json | grep true;
 then
-    aws s3 cp s3://ah-aim-dn-applications/setupZeppelin/resources/ zeppelinsetup --recursive
+    aws s3 cp s3://<s3-bucket>/zepplin-setup/resources/ zeppelinsetup --recursive
     sudo cp ./zeppelinsetup/shiro.ini /usr/lib/zeppelin/conf/shiro.ini
     sudo cp ./zeppelinsetup/zeppelin-env.sh /usr/lib/zeppelin/conf/zeppelin-env.sh
     sudo cp ./zeppelinsetup/zeppelin-site.xml /usr/lib/zeppelin/conf/zeppelin-site.xml
