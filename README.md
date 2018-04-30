@@ -30,12 +30,13 @@ The first step is to set up an EMR cluster.
 2. Choose Go to advanced options and enter the following options:
     1. Vendor: Amazon
     2. We require Hadoop, Zeppelin, Ganglia, and Spark are selected.
-    3. In the Add steps section, for Step type, choose Custom JAR, and select configure.
-        1. Change name to "custom bootstrap action"
+    3. Add the bootstrap action.
+    4. In the Add steps section, for Step type, choose Custom JAR, and select configure.
+        1. Change name to "custom step"
         2. in `jar location` add `s3://region.elasticmapreduce/libs/script-runner/script-runner.jar`
 
         **replace** `region` **with the region in which you've created your EMR instance**. For example if your region is eu-west-1 the jar location is in `s3://eu-west-2.elasticmapreduce/libs/script-runner/script-runner.jar`. _The script runner allows you run a script at any time during the step process._
-        3. In `arguments` add `s3://ah-aim-dn-applications/setupZeppelin/bootstrapaction.sh`.
+        3. In `arguments` add `s3://ah-aim-dn-applications/setupZeppelin/step.sh`.
 3. Choose Add, Next.
 4. On the Hardware Configuration page, select your VPC and the subnet where you want to launch the cluster, keep the default selection of one master and two core nodes of m3.xlarge, and choose Next.
 5. On the General Options page, give your cluster a name (e.g., Spark-Cluster) and choose Next.
