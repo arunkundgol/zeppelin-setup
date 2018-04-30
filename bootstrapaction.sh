@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
-# Commands to install anaconda python
 # Python packages
 
 sudo yum -y update
-#              Install Anaconda (Python 3) & Set To Default              
-wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh -O ~/anaconda.sh
 
-bash ~/anaconda.sh -b -p $HOME/anaconda
-
-echo -e '\nexport PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc && source $HOME/.bashrc
-
-#                    Install Additional Packages              
-conda install -y psycopg2
+#                    Install Additional Packages            
+wget https://jdbc.postgresql.org/download/postgresql-42.2.2.jar
+# copy postgresql jar to /usr/lib/spark/jars/
+sudo cp postgresql-42.2.2.jar  /usr/lib/spark/jars/
 
 # Run only master node
 
